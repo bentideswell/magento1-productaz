@@ -1,0 +1,47 @@
+<?php
+/**
+ *
+ */
+?>
+<div class="page-title">
+	<h1><?php echo $this->__('All Products') ?></h1>
+</div>
+<div class="productaz">
+<?php if ($data = $this->getProductsByChar()): ?>
+	<div class="az-letters a-center">
+		<?php foreach($this->getCharacters() as $char): ?>
+			<a href="<?php echo $this->getCharacterUrl($char) ?>"><?php echo $char ?></a> 
+		<?php endforeach; ?>
+	</div>
+	<?php $charx = false ?>
+	<?php foreach($data as $char => $products): ?>
+		<?php if ($charx === false || $charx !== $char): ?>
+			<?php $charx = $char ?>
+				<div class="page-title title-buttons">
+					<h2 id="<?php echo $char ?>"><?php echo $char ?></h2>
+					<?php if ($char !== 'A'): ?>
+						<a href="#top">&uarr; <?php echo $this->__('Back to top') ?></a>
+					<?php endif; ?>
+				</div>
+		<?php endif; ?>
+		<ul id="productaz-<?php echo $char ?>">
+			<?php foreach($products as $_product): ?>
+				<li class="item">
+					<a href="<?php echo $_product->getProductUrl() ?>" class="product-name" title="<?php echo $this->escapeHtml($_product->getName()) ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a>
+					<?php if($_product->getRatingSummary() && ($reviewHtml = trim($this->getReviewsSummaryHtml($_product, 'short'))) !== ''): ?>
+						<div class="product-review"><?php echo $reviewHtml ?></div>
+					<?php endif; ?>
+					<?php if ($text = $this->getProductText($_product)): ?>
+						<p><?php echo $this->stripTags($text) ?></p>
+					<?php endif; ?>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+		<script type="text/javascript">
+		decorateList($('productaz-<?php echo $char ?>'));
+		</script>
+	<?php endforeach; ?>
+<?php else: ?>
+	<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php endif; ?>
+</div>
