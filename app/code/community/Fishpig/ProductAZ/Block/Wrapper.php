@@ -4,6 +4,7 @@
  * @package     Fishpig_ProductAZ
  * @license     http://fishpig.co.uk/license.txt
  * @author      Ben Tideswell <help@fishpig.co.uk>
+ * @SkipObfuscation
  */
 
 class Fishpig_ProductAZ_Block_Wrapper extends Mage_Catalog_Block_Product_Abstract
@@ -101,7 +102,8 @@ class Fishpig_ProductAZ_Block_Wrapper extends Mage_Catalog_Block_Product_Abstrac
 		$collection = Mage::getResourceModel('catalog/product_collection')
 			->setStoreId(Mage::app()->getStore()->getId())
 			->addAttributeToSelect(array_merge($this->getProductSelectAttributes(), array($this->getProductTextAttribute())))
-			->addUrlRewrite();
+			->addUrlRewrite()
+			->addAttributeToSort('name', 'asc');
 
 		Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
 		Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($collection);

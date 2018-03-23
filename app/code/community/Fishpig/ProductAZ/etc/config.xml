@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Fishpig_ProductAZ>
-			<version>1.1.0.1</version>
+			<version>1.1.0.2</version>
 		</Fishpig_ProductAZ>
 	</modules>
 	<global>
@@ -28,36 +28,36 @@
 			</controller_front_init_before>
 		</events>
 	</global>
-    <frontend>
-    	<routers>
-    		<productaz>
-    			<use>standard</use>
-    			<args>
-    				<module>Fishpig_ProductAZ</module>
-    				<frontName>productaz</frontName>
-    			</args>
-    		</productaz>
-    	</routers>
-    	<layout>
-    		<updates>
-    			<productaz>
-    				<file>productaz.xml</file>
-    			</productaz>
-    		</updates>
-    	</layout>
-    </frontend>
-    <default>
-    	<productaz>
-    		<settings>
-    			<enabled>1</enabled>
-    			<url>product-az</url>
-    			<product_text_attribute>short_description</product_text_attribute>
-    		</settings>
-    		<seo>
-    			<url>product-az</url>
-    			<page_title>Product A-Z</page_title>
-    			<meta_description>Test</meta_description>
-    		</seo>
-    	</productaz>
-    </default>
+  <frontend>
+  	<routers>
+  		<productaz>
+  			<use>standard</use>
+  			<args>
+  				<module>Fishpig_ProductAZ</module>
+  				<frontName>productaz</frontName>
+  			</args>
+  		</productaz>
+  	</routers>
+  	<layout>
+  		<updates>
+  			<productaz>
+  				<file>productaz.xml</file>
+  			</productaz>
+  		</updates>
+  	</layout>
+  </frontend>
+  <default>
+  	<productaz>
+  		<settings>
+  			<enabled>1</enabled>
+  			<url>product-az</url>
+  			<product_text_attribute>short_description</product_text_attribute>
+  		</settings>
+  		<seo>
+  			<url>product-az</url>
+  			<page_title>Product A-Z</page_title>
+  			<meta_description>Test</meta_description>
+  		</seo>
+  	</productaz>
+  </default>
 </config>

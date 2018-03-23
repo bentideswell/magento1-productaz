@@ -3,4 +3,3 @@ app/design/frontend/base/default/layout/productaz.xml app/design/frontend/base/d
 app/design/frontend/base/default/template/productaz app/design/frontend/base/default/template/productaz
 app/etc/modules/Fishpig_ProductAZ.xml app/etc/modules/Fishpig_ProductAZ.xml
 skin/frontend/base/default/css/productaz.css skin/frontend/base/default/css/productaz.css
-var/connect/Fishpig_ProductAZ.xml var/connect/Fishpig_ProductAZ.xml

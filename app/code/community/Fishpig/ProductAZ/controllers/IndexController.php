@@ -4,6 +4,7 @@
  * @package     Fishpig_ProductAZ
  * @license     http://fishpig.co.uk/license.txt
  * @author      Ben Tideswell <help@fishpig.co.uk>
+ * @SkipObfuscation
  */
 
 class Fishpig_ProductAZ_IndexController extends Mage_Core_Controller_Front_Action
