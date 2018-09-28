@@ -17,12 +17,12 @@ class Fishpig_ProductAZ_IndexController extends Mage_Core_Controller_Front_Actio
 	public function indexAction()
 	{
 		$this->loadLayout();
-
-		if (($pageTitle = trim(Mage::getStoreConfig('productaz/seo/page_title'))) !== '') {
-			$this->_title($pageTitle);
-		}
 				
 		if ($headBlock = $this->getLayout()->getBlock('head')) {
+			if (($pageTitle = trim(Mage::getStoreConfig('productaz/seo/page_title'))) !== '') {
+				$headBlock->setTitle($pageTitle);
+			}
+		
 			if (($metaDescription = trim(Mage::getStoreConfig('productaz/seo/meta_description'))) !== '') {
 				$headBlock->setDescription($metaDescription);
 			}
